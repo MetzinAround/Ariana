@@ -1,15 +1,8 @@
-console.log("let's go girls...");
-
+console.log("one taught me patience...");
+//checking if it's in develop mode for local use
 if (process.env.NODE_ENV === "develop") {
   require("dotenv").config();
 };
-
-// using Node Schedule from https://github.com/node-schedule/node-schedule suggested by Brendan O'leary https://twitter.com/olearycrew
-const schedule = require("node-schedule");
-const rule = new schedule.RecurrenceRule();
-rule.hour = 12;
-rule.tz = "Etc/GMT+5";
-
 
 // Create an Twitter object to connect to Twitter API
 var Twit = require('twit');
@@ -20,17 +13,12 @@ var config = require('./config.js');
 var T = new Twit(config);
 
 // Setting up a user stream
-// "this don't impress me much" - Daniel 2021 
-var stream = T.stream('statuses/filter', { track: '@bot_shania' });
+var stream = T.stream('statuses/filter', { track: '@BotianaGrande' });
 
 // Now looking for tweet events
 // See: https://dev.twitter.com/streaming/userstreams
 stream.on('tweet', tweetEvent);
 
-
-
-//array to add random emojis to the beginning of the tweet
-const thatDontImpressMeMuch = ["🎶🎵🙄🚀🤓", "🎶🎵🙄🏎", "🎶🎵🙄👨‍🎬🍿"];
 
 // Here a tweet event is triggered!
 function tweetEvent(tweet) {
@@ -39,22 +27,22 @@ function tweetEvent(tweet) {
   var text = tweet.text;
   var name = tweet.user.screen_name;
 
-    let regex = /(impress)/ig;
+    let regex = /(👀💅)/g;
     var str = text;
     
-    let impressive = str.match(regex) || [];
+    let godIsAWoman = str.match(regex) || [];
 
-    var isItImpressive = impressive.length>0;
+    var sevenRings = godIsAWoman.length>0;
   
-      console.log(isItImpressive)
+      console.log(sevenRings)
   //from itsAydrian in twitch chat on 1/28 😘    
   let i = Math.floor(Math.random() * 3);
   
   // checks text of tweet for mention of Shania Bot
-  if ((text.includes('@bot_shania') && isItImpressive === true)) {
+  if ((text.includes('@BotianaGrande') && sevenRings === true)) {
 
     // Start a reply back to the sender
-    var replyText = thatDontImpressMeMuch[i] + "@"+ name + " That don't impress me much. ";
+    var replyText = thatDontImpressMeMuch[i] + "@"+ name + " Thank you, next...";
     
     // Post that tweet
     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id}, tweeted);
@@ -72,17 +60,5 @@ function tweetEvent(tweet) {
   }
 }
 
-const job1 = schedule.scheduleJob(rule, function()
-{
-  console.log("bah baaaaaaaah budah duh dah dah");
-  T.post('statuses/update', {status: "...let's go, girls."});
-}); 
-
-function letsGoGirls() 
-{
-  console.log("We went Girls")
-};
-
-job1.on("tweetIt", letsGoGirls)
 
 
