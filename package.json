@@ -1,8 +1,8 @@
 {
-  "name": "shaniaupdate",
+  "name": "ariana",
   "version": "1.0.0",
-  "description": "updating shania",
-  "main": "shania.js",
+  "description": "updating ariana",
+  "main": "ariana.js",
   "scripts": {
     "test": "ariana.js",
     "start": "node ./ariana.js",
