@@ -42,7 +42,7 @@ function tweetEvent(tweet) {
   if ((text.includes('@BotianaGrande') && sevenRings === true)) {
 
     // Start a reply back to the sender
-    var replyText = thatDontImpressMeMuch[i] + "@"+ name + " Thank you, next...";
+    var replyText = "@"+ name + " Thank you, next...";
     
     // Post that tweet
     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id}, tweeted);
