@@ -56,7 +56,7 @@ function tweetEvent(tweet) {
       }
     }    
   } else {
-    console.log("We can't go, girls");
+    console.log("One taught me pain");
   }
 }
 
