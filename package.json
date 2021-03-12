@@ -1,12 +1,12 @@
 {
-  "name": "ariana",
+  "name": "mariah",
   "version": "1.0.0",
-  "description": "updating ariana",
-  "main": "ariana.js",
+  "description": "updating mariah",
+  "main": "mariah.js",
   "scripts": {
-    "test": "ariana.js",
-    "start": "node ./ariana.js",
-    "develop": "NODE_ENV=develop node ariana.js"
+    "test": "mariah.js",
+    "start": "node ./mariah.js",
+    "develop": "NODE_ENV=develop node mariah.js"
   },
   "author": "",
   "license": "ISC",

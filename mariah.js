@@ -1,19 +1,19 @@
-console.log("one taught me patience...");
+console.log("I don't want a lot for Christmas...");
 //checking if it's in develop mode for local use
 if (process.env.NODE_ENV === "develop") {
   require("dotenv").config();
 };
 
 // Create an Twitter object to connect to Twitter API
-var Twit = require('twit');
+const Twit = require('twit');
 
 // Pulling keys from another file
-var config = require('./config.js');
+const config = require('./config.js');
 // Making a Twit object for connection to the API
-var T = new Twit(config);
+const T = new Twit(config);
 
 // Setting up a user stream
-var stream = T.stream('statuses/filter', { track: '@BotianaGrande' });
+const stream = T.stream('statuses/filter', { track: '@MechanicalCarey' });
 
 // Now looking for tweet events
 // See: https://dev.twitter.com/streaming/userstreams
@@ -27,22 +27,22 @@ function tweetEvent(tweet) {
   var text = tweet.text;
   var name = tweet.user.screen_name;
 
-    let regex = /(👀💅)/g;
-    var str = text;
+    let regex = /(👀🙄😒)/g;
+    let str = text;
     
-    let godIsAWoman = str.match(regex) || [];
+    let fantasy = str.match(regex) || [];
 
-    var sevenRings = godIsAWoman.length>0;
+    let alwaysBeMyBaby = fantasy.length>0;
   
-      console.log(sevenRings)
+      console.log(alwaysBeMyBaby)
   //from itsAydrian in twitch chat on 1/28 😘    
   let i = Math.floor(Math.random() * 3);
   
   // checks text of tweet for mention of Shania Bot
-  if ((text.includes('@BotianaGrande') && sevenRings === true)) {
+  if ((text.includes('@MechanicalCarey') && alwaysBeMyBaby === true)) {
 
     // Start a reply back to the sender
-    var replyText = "@"+ name + " Thank you, next...";
+    const replyText = "@"+ name + "... I don't know her ¯\\_(ツ)_/¯... ‍";
     
     // Post that tweet
     T.post('statuses/update', { status: replyText, in_reply_to_status_id: id}, tweeted);
@@ -56,7 +56,7 @@ function tweetEvent(tweet) {
       }
     }    
   } else {
-    console.log("One taught me pain");
+    console.log("Just a sweet sweet fantasy");
   }
 }
 
