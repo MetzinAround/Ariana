@@ -1,18 +1,26 @@
 {
-  "name": "mariah",
+  "name": "MechanicalCarey",
   "version": "1.0.0",
-  "description": "updating mariah",
-  "main": "mariah.js",
+  "description": "",
+  "main": "config.js",
   "scripts": {
     "test": "mariah.js",
     "start": "node ./mariah.js",
     "develop": "NODE_ENV=develop node mariah.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetzinAround/MechanicalCarey.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MetzinAround/MechanicalCarey/issues"
+  },
+  "homepage": "https://github.com/MetzinAround/MechanicalCarey#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "node-schedule": "^2.0.0",
     "twit": "^2.2.11"
   }
 }
